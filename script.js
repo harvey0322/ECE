@@ -95,20 +95,22 @@ function renderWeeks() {
         card.className = 'week-card';
         
         card.innerHTML = `
-            <div class="week-image-wrapper">
-                <img src="${week.image}" alt="Week ${week.weekNumber} - ${week.title}" class="week-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect fill=%22%23e2e8f0%22 width=%22400%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%23475569%22%3EWeek ${week.weekNumber}%3C/text%3E%3C/svg%3E'">
-                <div class="week-number-badge">${week.weekNumber}</div>
-            </div>
-            <div class="week-content">
-                <h3 class="week-title">${week.title}</h3>
-                <p class="week-description">${week.description}</p>
-                <div class="week-meta">
-                    <span class="meta-item">${week.date}</span>
-                    <span class="meta-item">•</span>
-                    ${week.topics.map(topic => `<span class="meta-item">${topic}</span>`).join('')}
-                </div>
-            </div>
-        `;
+    <div class="week-image-wrapper">
+        <img src="${week.image}" 
+             alt="Week ${week.weekNumber} - ${week.title}" 
+             class="week-image">
+        <div class="week-number-badge">${week.weekNumber}</div>
+    </div>
+
+    <div class="week-content">
+        <h3 class="week-title">${week.title}</h3>
+        <p class="week-description">${week.description}</p>
+
+        <div class="week-meta">
+            <span class="meta-item">${week.date}</span>
+        </div>
+    </div>
+`;
         
         container.appendChild(card);
     });
